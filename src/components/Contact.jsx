@@ -60,12 +60,7 @@ const StyledSection = styled.section`
     color: var(--color-accent-hover);
   }
 
-  .contact-email {
-    font-family: var(--font-sans);
-    font-size: 0.9375rem;
-    font-weight: 400;
-    color: var(--color-text-secondary);
-  }
+
 `;
 // #endregion
 
@@ -81,8 +76,7 @@ const Contact = () => {
           <div className="contact-body">
             <p>
               For speaking engagements, media inquiries, and academic correspondence,
-              please visit my institutional profile at Boston College or reach me directly
-              via email.
+              please visit my institutional profile at Boston College.
             </p>
 
             <div className="contact-actions">
@@ -94,9 +88,6 @@ const Contact = () => {
               >
                 Boston College Faculty Profile ↗
               </a>
-              <span className="contact-email">
-                stanton.wortham@bc.edu
-              </span>
             </div>
 
             {cvUrl && (
