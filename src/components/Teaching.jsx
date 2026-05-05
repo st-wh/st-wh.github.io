@@ -19,7 +19,7 @@ const StyledSection = styled.section`
   }
 
   .section-heading {
-    margin: 0 0 var(--space-6) 0;
+    margin: 0 0 var(--space-7) 0;
   }
 
   .teaching-body {
