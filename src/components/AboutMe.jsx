@@ -119,7 +119,31 @@ const AboutMe = ({ headshot }) => {
                 in education that resist easy answers. I am currently Dean of the Lynch School
                 of Education and Human Development at Boston College, where our work on
                 formative education{/* [VERIFY: comfort with "formative education" in first-person voice here] */}{" "}
-                gives those questions an institutional home.
+                — anchored in the{" "}
+                <a
+                  href="https://www.bc.edu/content/bc-web/schools/lynch-school/centers-initiatives/transformative-ed-lab.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Transformative Education Lab
+                </a>
+                {" "}— gives those questions an institutional home. I chair the board of the{" "}
+                <a
+                  href="https://cped.memberclicks.net/board-of-directors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Carnegie Project on the Education Doctorate
+                </a>
+                , and in 2019 I was elected to the{" "}
+                <a
+                  href="https://naeducation.org/member/stanton-wortham/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  National Academy of Education
+                </a>
+                .
               </p>
             </div>
 

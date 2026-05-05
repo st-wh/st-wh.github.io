@@ -94,6 +94,16 @@ const Footer = () => {
               ORCID ↗
             </a>
           </li>
+          <li>
+            <a
+              href="https://www.researchgate.net/profile/Stanton-Wortham-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              ResearchGate ↗
+            </a>
+          </li>
         </ul>
       </div>
     </StyledFooter>
