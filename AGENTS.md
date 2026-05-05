@@ -393,6 +393,73 @@ Use these installed substitutes instead:
 - Media performance: `/profile`, `vercel-react-best-practices`, `webapp-testing`, and explicit image/video loading checks.
 - Data modeling / structured data: `simplify`, `plugin:context7:context7`, `@systems-architect`, and manual schema/data modeling in repository data files.
 
+## Blanket Permissions
+
+The following commands are pre-approved and do not require per-use confirmation. Run them freely as part of normal development workflow.
+
+### Build and Dev Server
+
+```bash
+npm run build
+npm start
+npm run test
+```
+
+### Git Workflow
+
+```bash
+git status
+git diff [--stat] [--staged]
+git log [--oneline] [-n]
+git add <specific files>   # stage by name, never git add -A or git add .
+git commit -m "..."
+git push origin main
+```
+
+### Browse CLI (UI Testing)
+
+```bash
+browse env local
+browse env local --auto-connect
+browse open <url>
+browse snapshot
+browse screenshot [path]
+browse scroll <x> <y> <dx> <dy>
+browse click <ref>
+browse press <key>
+browse get url
+browse get title
+browse get text <selector>
+browse get html <selector>
+browse stop
+browse status
+```
+
+### Playwright / Node Test Scripts
+
+```bash
+node <inline or file script>   # for viewport tests, focus checks, console error checks
+```
+
+### File System
+
+```bash
+mkdir -p <path>              # create asset/directory scaffolding
+ls <path>
+find . -name "..."
+grep -r "..." <path>
+curl -s -o /dev/null -w "%{http_code}" <localhost url>   # health check only
+kill <pid>                   # stop background dev server
+```
+
+### Limits That Still Apply
+
+- Never `git push --force` or `git reset --hard` without explicit confirmation.
+- Never `git add -A` or `git add .` — always stage named files.
+- Never `rm -rf` or delete files without explicit confirmation.
+- Never push to any remote other than `origin main` without explicit confirmation.
+- Never run `curl` or `fetch` against external production URLs as part of automated scripts.
+
 ## Task Execution Protocol
 
 For every UI, architectural, content, or deployment task:
