@@ -10,10 +10,9 @@ export const siteOwnerTitle = [
   "Lynch School of Education and Human Development, Boston College",
 ];
 
-// CV PDF — set to "/files/cv.pdf" after dropping the file in public/files/
-// See public/files/README.txt for instructions.
+// CV PDF — served from public/cv.pdf
 // When null, the CV nav link is hidden entirely.
-export const cvUrl = null;
+export const cvUrl = "/cv.pdf";
 
 // Boston College faculty profile — verified link
 export const bcProfileUrl =

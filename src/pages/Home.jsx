@@ -1,6 +1,5 @@
 import React from "react";
 import { Element } from "react-scroll";
-import { useGetUsersQuery } from "../app/apiSlice";
 import Hero from "../components/Hero";
 import AboutMe from "../components/AboutMe";
 import SelectedWorks from "../components/SelectedWorks";
@@ -14,8 +13,6 @@ import { siteOwnerName, siteOwnerTitle } from "../config";
 
 // #region component
 const Home = () => {
-  const { data: userData } = useGetUsersQuery();
-
   React.useEffect(() => {
     document.title = siteOwnerName;
   }, []);
@@ -24,12 +21,12 @@ const Home = () => {
     <>
       <Element name="Home" id="home">
         <Hero
-          name={userData?.name || siteOwnerName}
+          name={siteOwnerName}
           titleLines={siteOwnerTitle}
         />
       </Element>
       <main>
-        <AboutMe headshot={null} />
+        <AboutMe headshot={process.env.PUBLIC_URL + "/images/profileImage.jpeg"} />
         <SelectedWorks />
         <ResearchAreas />
         <Books />

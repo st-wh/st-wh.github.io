@@ -1,199 +1,115 @@
 # CLAUDE.md
 
-Canonical coding-agent instructions live in:
+Behavioral guidelines to reduce common LLM coding mistakes, merged with project-specific instructions.
 
-`@AGENTS.md`
+**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
-Stakeholder-approved product direction lives in:
+---
 
-`@Checklist.md`
+## 1. Think Before Coding
 
-Design calibration lives in:
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
 
-`.impeccable.md`
+Before implementing:
+- State your assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them - don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
 
-Read `AGENTS.md`, `Checklist.md`, and `.impeccable.md` before making architectural, UI, content, or deployment changes.
+## 2. Simplicity First
+
+**Minimum code that solves the problem. Nothing speculative.**
+
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+## 3. Surgical Changes
+
+**Touch only what you must. Clean up only your own mess.**
+
+When editing existing code:
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated dead code, mention it - don't delete it.
+
+When your changes create orphans:
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+
+The test: Every changed line should trace directly to the user's request.
+
+## 4. Goal-Driven Execution
+
+**Define success criteria. Loop until verified.**
+
+Transform tasks into verifiable goals:
+- "Add validation" → "Write tests for invalid inputs, then make them pass"
+- "Fix the bug" → "Write a test that reproduces it, then make it pass"
+- "Refactor X" → "Ensure tests pass before and after"
+
+For multi-step tasks, state a brief plan:
+```
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+```
+
+Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+---
+
+**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+
+---
 
 ## Project Context
 
-This repository is the academic and public-impact portfolio for Dr. Stanton Wortham.
+This is the academic and public-impact portfolio for **Dr. Stanton Wortham**. It is not a developer portfolio. It centralizes books, articles, films, research, teaching/mentorship, CV, and press needs, and makes the usefulness of the work legible to multiple audiences.
 
-It is not a generic developer portfolio. It should centralize academic work, make the usefulness of the work legible to multiple audiences, support press/speaking needs, and preserve a future path toward a practical persona/discourse-analysis tool.
+Read **`AGENTS.md`**, **`Checklist.md`**, and **`.impeccable.md`** before any architectural, UI, content, or deployment change.
 
-## Core Product Direction
+### Source Hierarchy
 
-The stakeholder-approved direction is:
+When instructions conflict:
+
+1. Current user prompt.
+2. `Checklist.md` — stakeholder decisions.
+3. `AGENTS.md` — canonical operating guide.
+4. `.impeccable.md` — design register.
+5. Existing repository source code.
+
+### Core Product Direction
 
 - First-person voice by default.
-- Academic portfolio hub for books, articles, films, research, teaching/mentorship, CV, and external contact path.
 - Minimalist, typographical, Notion-adjacent visual language.
-- Neutral background with one primary accent color.
-- Sans-serif typography.
+- Neutral background with one primary accent color; sans-serif typography.
 - Selected Works plus full publication archive.
 - Boston College profile/contact link instead of a standalone contact form at launch.
 
 ## Non-Negotiables
 
-- Never invent publications, citations, academic history, film credits, roles, awards, dates, PDFs, or external links.
-- Treat `Checklist.md` as the product strategy source of truth.
-- Preserve eloquent minimalism, academic weight, and public usefulness.
-- Use the actual repository architecture. Do not assume unavailable packages, components, or tools.
-- Do not assume `@workspace/mobile-design-system`, `tokens.css`, `MobilePage`, `PageSection`, or `BottomActionBar` exist unless they are found in this repository.
-- Do not claim implementation is done unless build, responsive, accessibility, and edge-case validation were attempted or explicitly marked as not run.
+- **Never invent** publications, citations, academic history, film credits, roles, awards, dates, PDFs, or external links.
+- **Never assume** unavailable packages: `@workspace/mobile-design-system`, `tokens.css`, `MobilePage`, `PageSection`, `BottomActionBar` do not exist in this repo.
+- **Never claim completion** unless build, responsive, accessibility, and edge-case validation were attempted or explicitly marked as not run.
+- **`Checklist.md` is the product strategy source of truth.**
 
-## Available Skills / Plugin Routing
+## Finished Implementation Format
 
-Use only installed skills/plugins. Route them by task type.
+Every finished implementation response must include:
 
-### Design and UI
+```
+Micro-testing (commit: <type(scope): summary>):
+- [ ] Build: <command/result or "not run">
+- [ ] Responsive: <viewport(s) checked or "not run">
+- [ ] A11y: <checks attempted or "not run">
+- [ ] Visual System: No unnecessary hardcoded visual one-offs.
+- [ ] Edge: <specific edge case checked>
+```
 
-**Impeccable workflow skills:**
-- `impeccable` — Design calibration, polish, typesetting
-- `design-taste-frontend` — Senior UI/UX architecture and taste
-- `minimalist-ui` — Clean editorial-style interfaces
-- `redesign-existing-projects` — Retrofit premium quality onto existing layouts
-- `vercel-react-best-practices` — React/Next.js performance and best practices
-
-**Tresor design agents (prefix `@`):**
-- `@ui-ux-designer` — Interface design, wireframes, design systems
-- `@frontend-developer` — React components, state, responsive layouts
-- `@frontend-ux-specialist` — UI component creation and review
-- `@brand-guardian` — Brand identity and visual consistency
-- `@legacy-modernizer` — Modernizing old or generic template code
-
-**Recommended Impeccable flow:**
-1. `/impeccable teach` when establishing or updating `.impeccable.md`.
-2. `/typeset` when changing headings, long academic copy, publications, or page rhythm.
-3. `/polish` before finalizing major page layouts or reusable components.
-
-### Architecture and Planning
-
-**Tresor agents:**
-- `@systems-architect` — Information architecture, component design, technology evaluation
-- `@architect-review` — Architectural consistency review
-- `@refactor-expert` — Code refactoring, clean architecture, SOLID principles
-
-**Workflow commands:**
-- `/scaffold react-component <Name>` — Generate component boilerplate with tests
-- `/debt-analysis` — Technical debt identification and prioritization
-- `/code-health` — Comprehensive codebase health baseline
-
-### Code Quality, Review, and Testing
-
-**Skills:**
-- `simplify` — Refactoring, duplication removal, maintainability checks
-- `init` — Initialize or refresh codebase documentation
-- `review` — Pull-request review
-
-**Tresor commands:**
-- `/review` — Automated code review with security, performance, config checks
-- `/test-gen` — Generate comprehensive unit, integration, and E2E tests
-- `/review --scope staged` — Pre-commit review
-
-**Tresor agents:**
-- `@test-engineer` — Testing strategies, QA, test creation
-- `@root-cause-analyzer` — RCA, systematic debugging
-- `@config-safety-reviewer` — Configuration safety, magic numbers, timeouts
-
-### Security, Accessibility, and Compliance
-
-**Skills:**
-- `security-review` — Dependency, environment, credential, form, external-link, deployment changes
-- `security-auditor` — Vulnerability assessment, OWASP compliance
-
-**Tresor commands:**
-- `/audit` — Comprehensive multi-phase security audit
-- `/vulnerability-scan` — CVE scanning, dependency vulnerabilities
-- `/compliance-check` — WCAG, GDPR, regulatory compliance
-
-**Tresor agents:**
-- `@security-auditor` — Security assessment, OWASP
-- `@legal-compliance-checker` — Privacy policies, GDPR, regulatory
-
-### Performance
-
-**Tresor commands:**
-- `/profile` — Comprehensive performance profiling, bottleneck identification
-- `/benchmark` — Load testing, Core Web Vitals, performance scoring
-
-**Tresor agents:**
-- `@performance-tuner` — Profiling, optimization, scalability
-- `@performance-benchmarker` — Performance testing and reporting
-
-### UI Testing and Validation
-
-**Skills:**
-- `webapp-testing` — Local web-app testing, route checks, accessibility spot checks
-- `browse:ui-test` — Adversarial UI and responsive testing
-- `browse:browser` — Interactive web-page inspection with Playwright
-
-### Documentation
-
-**Skills:**
-- `docs-gen` — Auto-generate documentation from code
-
-**Tresor commands:**
-- `/docs-gen` — Documentation generation from source
-
-**Tresor agents:**
-- `@docs-writer` — Technical documentation, user guides
-- `@content-writer` — Accessible content explaining complex academic topics
-
-### Deployment and Operations
-
-**Tresor commands:**
-- `/deploy-validate` — Pre-deployment validation (build, tests, security, accessibility)
-- `/health-check` — Production health verification
-
-**Tresor agents:**
-- `@deployment-engineer` — CI/CD pipelines, GitHub Actions, GitHub Pages
-- `@devops-troubleshooter` — Debug deployment issues
-
-### Browser, Research, and External Docs
-
-- `browse:search` — Current web search
-- `browse:fetch` — Fetch known URLs without full browser session
-- `browse:company-research` — Institution/media/research context
-- `browse:browser` — Interactive inspection
-- `plugin:context7:context7` — Current library/framework/API docs (React, Redux, Bootstrap, React Router, GitHub Pages)
-
-Do not use web research to invent academic facts. Prefer provided content, official institutional profiles, publisher pages, Google Scholar, verified CVs, and verified open-access repositories.
-
-### Claude Code Configuration
-
-- `update-config` — Claude Code settings, permissions, hooks, environment variables
-- `fewer-permission-prompts` — Safe permission allowlists
-- `keybindings-help` — Keyboard shortcut customization
-- `loop` and `schedule` — Explicitly requested recurring QA or cron work only
-- `claude-api` — Only if Anthropic API/SDK app code is introduced
-
-### Workflow Utilities
-
-- `/prompt-create` — Generate optimized prompts for complex sub-tasks
-- `/prompt-run` — Execute prompts in sub-agents (parallel or sequential)
-- `/todo-add` — Capture ideas with full context mid-conversation
-- `/todo-check` — Resume work on captured todos
-- `/handoff-create` — Create comprehensive context handoff document
-- `/whats-next` — Analyze conversation and create a handoff summary
-
-## Standards References (Tresor)
-
-When writing or reviewing code, apply standards from:
-- `/Users/jw-jang/.claude/tresor-resources/standards/style-guides/react.md`
-- `/Users/jw-jang/.claude/tresor-resources/standards/style-guides/javascript.md`
-- `/Users/jw-jang/.claude/tresor-resources/standards/style-guides/css.md`
-- `/Users/jw-jang/.claude/tresor-resources/standards/git-workflows/conventional-commits.md`
-
-## Do Not Reference Unavailable Tools
-
-Do not route work to tools that are not installed, including:
-
-- `bibtex-doi-parser`
-- `academic-citation-manager`
-- `a11y-audit-pro`
-- `semantic-html-validator`
-- `video-performance-optimizer`
-- `sanity-cms-architect`
-- `structured-data-markup`
-
-If academic metadata parsing, accessibility validation, media optimization, CMS modeling, or structured data work is needed, use the installed alternatives described in `AGENTS.md`.
+Do not claim a task is complete if validation was not attempted. Say exactly what was and was not checked.
