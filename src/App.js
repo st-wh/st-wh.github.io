@@ -1,7 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import { selectMode, setMode } from "./app/appSlice";
 import { useGetUsersQuery } from "./app/apiSlice";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -11,58 +8,22 @@ import { ErrorBoundary } from "react-error-boundary";
 import AppFallback from "./components/AppFallback";
 import GlobalStyles from "./components/GlobalStyles";
 import ScrollToTop from "./components/ScrollToTop";
-import Loading from "./components/Loading";
-import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import { getStoredTheme, getPreferredTheme, setTheme } from "./utils";
 
 // #region component
 const App = () => {
-  const theme = useSelector(selectMode);
-  const dispatch = useDispatch();
-  const { isLoading, isSuccess, isError, error } = useGetUsersQuery();
-  let content;
+  const { isError, error } = useGetUsersQuery();
 
-  const setThemes = React.useCallback(
-    (theme) => {
-      if (theme) {
-        dispatch(setMode(theme));
-        setTheme(theme);
-      } else {
-        dispatch(setMode(getPreferredTheme()));
-        setTheme(getPreferredTheme());
-      }
-    },
-    [dispatch]
-  );
+  if (isError) {
+    console.warn("GitHub API error — falling back to config values:", error?.status);
+  }
 
-  React.useEffect(() => {
-    setThemes();
-  }, [setThemes]);
-
-  React.useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = () => {
-      const storedTheme = getStoredTheme();
-      if (storedTheme !== "light" && storedTheme !== "dark") {
-        setThemes();
-      }
-    };
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, [setThemes]);
-
-  if (isLoading) {
-    content = (
-      <Container className="d-flex vh-100 align-items-center">
-        <Loading />
-      </Container>
-    );
-  } else if (isSuccess || isError) {
-    // Render the site even on API error — name/avatar fall back to config values
-    content = (
-      <>
+  return (
+    <ErrorBoundary FallbackComponent={AppFallback}>
+      <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <GlobalStyles />
+        <ScrollToTop />
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -70,25 +31,6 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-      </>
-    );
-
-    if (isError) {
-      console.warn(
-        "GitHub API error — falling back to config values:",
-        error?.status
-      );
-    }
-  }
-
-  return (
-    <ErrorBoundary FallbackComponent={AppFallback}>
-      <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <ThemeProvider theme={{ name: theme }}>
-          <ScrollToTop />
-          <GlobalStyles />
-          {content}
-        </ThemeProvider>
       </HashRouter>
     </ErrorBoundary>
   );

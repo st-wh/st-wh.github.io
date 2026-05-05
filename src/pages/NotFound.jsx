@@ -1,45 +1,59 @@
 import React from "react";
-// Styles
-import styled, { keyframes } from "styled-components";
-// Components
-import { Container } from "react-bootstrap";
-// Images
-import Logo from "../images/logo.svg";
-// Utils
-import { updateTitle } from "../utils";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 // #region styled-components
-const Spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-const StyledNotFound = styled.main`
+const StyledMain = styled.main`
+  min-height: calc(100vh - var(--nav-height));
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 2 * var(--nav-height) - 1rem);
+  padding: var(--space-9) var(--space-5);
 
-  span {
-    font-size: 5rem;
+  .notfound-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
   }
 
-  p {
-    font-size: 2rem;
+  .notfound-code {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-5) 0;
   }
 
-  .logo-img {
-    width: 10rem;
+  .notfound-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-5) 0;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    img {
-      animation: ${Spin} infinite 20s linear;
+  .notfound-body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: 480px;
+    margin: 0 0 var(--space-7) 0;
+  }
+
+  .notfound-link {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 100ms ease;
+
+    &:hover {
+      color: var(--color-accent-hover);
     }
   }
 `;
@@ -48,20 +62,23 @@ const StyledNotFound = styled.main`
 // #region component
 const NotFound = () => {
   React.useEffect(() => {
-    updateTitle("Not found...");
+    document.title = "Page not found — Stanton Wortham";
+    return () => { document.title = "Stanton Wortham"; };
   }, []);
 
   return (
-    <>
-      <StyledNotFound>
-        <Container className="d-flex justify-content-center">
-          <span>4</span>
-          <img src={Logo} alt="React Logo" className="logo-img" />
-          <span>4</span>
-        </Container>
-        <p className="text-center">Sorry, page not found...</p>
-      </StyledNotFound>
-    </>
+    <StyledMain>
+      <div className="notfound-inner">
+        <p className="notfound-code">404</p>
+        <h1 className="notfound-heading">Page not found.</h1>
+        <p className="notfound-body">
+          The page you're looking for doesn't exist or has moved.
+        </p>
+        <Link to="/" className="notfound-link">
+          ← Back to home
+        </Link>
+      </div>
+    </StyledMain>
   );
 };
 // #endregion

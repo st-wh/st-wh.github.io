@@ -1,33 +1,14 @@
-import React from "react";
-// State
 import PropTypes from "prop-types";
-// Components
-import { Container } from "react-bootstrap";
-// Utils
-import { getPreferredTheme, setTheme } from "../utils";
 
-// #region component
-const propTypes = { error: PropTypes.object.isRequired };
+const AppFallback = ({ error }) => (
+  <main style={{ display: "flex", flexDirection: "column", minHeight: "100vh", justifyContent: "center", alignItems: "center", padding: "2rem", fontFamily: "sans-serif" }}>
+    <p style={{ marginBottom: "1rem", color: "#555" }}>Something went wrong.</p>
+    <pre style={{ color: "red", whiteSpace: "pre-wrap", maxWidth: "600px" }}>
+      {`${error.name}: ${error.message}`}
+    </pre>
+  </main>
+);
 
-const AppFallback = ({ error }) => {
-  React.useEffect(() => {
-    setTheme(getPreferredTheme());
-  }, []);
-
-  return (
-    <main className="d-flex flex-column vh-100 justify-content-center align-items-center">
-      <Container className="text-center">
-        <p>Something went wrong:</p>
-        <pre
-          className="text-wrap"
-          style={{ color: "red" }}
-        >{`${error.name}: ${error.message}`}</pre>
-      </Container>
-    </main>
-  );
-};
-
-AppFallback.propTypes = propTypes;
-// #endregion
+AppFallback.propTypes = { error: PropTypes.object.isRequired };
 
 export default AppFallback;
