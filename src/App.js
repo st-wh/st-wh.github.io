@@ -1,5 +1,4 @@
 import React from "react";
-import { useGetUsersQuery } from "./app/apiSlice";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Publications from "./pages/Publications";
@@ -13,12 +12,6 @@ import Footer from "./components/Footer";
 
 // #region component
 const App = () => {
-  const { isError, error } = useGetUsersQuery();
-
-  if (isError) {
-    console.warn("GitHub API error — falling back to config values:", error?.status);
-  }
-
   return (
     <ErrorBoundary FallbackComponent={AppFallback}>
       <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>

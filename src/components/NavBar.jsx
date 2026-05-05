@@ -140,10 +140,10 @@ const NavBar = () => {
           </RouterLink>
 
           <ul className="nav-links">
-            {/* Scroll links — home page only */}
-            {isHome &&
-              scrollLinks.map((link) => (
-                <li key={link.id} className="nav-scroll-links">
+            {/* Scroll links on home; router links to home on other pages */}
+            {scrollLinks.map((link) => (
+              <li key={link.id} className="nav-scroll-links">
+                {isHome ? (
                   <ScrollLink
                     to={link.to}
                     spy={true}
@@ -156,8 +156,13 @@ const NavBar = () => {
                   >
                     {link.name}
                   </ScrollLink>
-                </li>
-              ))}
+                ) : (
+                  <RouterLink to="/" className="nav-link">
+                    {link.name}
+                  </RouterLink>
+                )}
+              </li>
+            ))}
 
             {/* Publications — always a router link */}
             <li>
