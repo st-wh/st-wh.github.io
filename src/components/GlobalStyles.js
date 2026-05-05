@@ -1,24 +1,17 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-/*
-=============== 
-Variables
-===============
-*/
 :root {
   --border: 1px solid var(--bs-primary);
   --transition: all 0.3s linear;
   --nav-height: 55px;
   --min-footer-height: 11vh;
-  --card-height: 29rem;
 }
 
-/*
-=============== 
-Global Styles
-===============
-*/
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
 main {
   min-height: calc(100vh - 2 * var(--nav-height) - 2rem);
 }
@@ -36,10 +29,6 @@ section {
 
 a:hover {
   cursor: pointer;
-}
-
-.title {
-  font-family: "Permanent Marker";
 }
 
 .link-icons {
@@ -64,16 +53,13 @@ a:hover {
   .link-icons {
     font-size: 2.5rem;
   }
-  .form-group {
-      max-width: 750px;
-    }
 }
 
 @media screen and (min-width: 1367px) {
   .link-icons:hover {
     color: var(--bs-primary);
   }
-  }
+}
 `;
 
 export default GlobalStyles;

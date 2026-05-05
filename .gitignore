@@ -25,3 +25,10 @@ Checklist.md
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+design-md-templates
+local_files
+
+# Claude Code local directories
+.agents/
+.claude/

@@ -1,6 +1,4 @@
-// https://getbootstrap.com/docs/5.3/utilities/colors/#sass-variables
-
-// Set the primary color for the theme
-$blue: #61dbfb;
-// Import Bootstrap and its default variables
+// TODO: Finalize accent color — pending stakeholder decision
+// Current: neutral academic slate blue placeholder
+$primary: #2d5f8a;
 @import "~bootstrap/scss/bootstrap.scss";
