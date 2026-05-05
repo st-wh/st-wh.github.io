@@ -175,6 +175,16 @@ const Books = () => {
                       Publisher ↗
                     </a>
                   )}
+                  {book.pdfUrl && (
+                    <a
+                      href={book.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="book-link"
+                    >
+                      Open Access PDF ↗
+                    </a>
+                  )}
                 </div>
               </li>
             ))}

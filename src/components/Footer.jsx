@@ -84,6 +84,16 @@ const Footer = () => {
               Google Scholar ↗
             </a>
           </li>
+          <li>
+            <a
+              href="https://orcid.org/0000-0003-0482-1191"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              ORCID ↗
+            </a>
+          </li>
         </ul>
       </div>
     </StyledFooter>
