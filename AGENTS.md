@@ -399,11 +399,18 @@ The following commands are pre-approved and do not require per-use confirmation.
 
 ### Build and Dev Server
 
+Dev server runs on **port 3001** (set via `.env` → `PORT=3001`). Never use port 3000 for this project.
+
 ```bash
 npm run build
-npm start
+npm start           # starts on http://localhost:3001
 npm run test
 ```
+
+All test URLs use port 3001:
+- Home: `http://localhost:3001/#/`
+- Publications: `http://localhost:3001/#/publications`
+- Health check: `curl -s -o /dev/null -w "%{http_code}" http://localhost:3001`
 
 ### Git Workflow
 
@@ -448,7 +455,7 @@ mkdir -p <path>              # create asset/directory scaffolding
 ls <path>
 find . -name "..."
 grep -r "..." <path>
-curl -s -o /dev/null -w "%{http_code}" <localhost url>   # health check only
+curl -s -o /dev/null -w "%{http_code}" http://localhost:3001   # health check only
 kill <pid>                   # stop background dev server
 ```
 
