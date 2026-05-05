@@ -1,4 +1,3 @@
-// TODO: Finalize accent color — pending stakeholder decision
-// Current: neutral academic slate blue placeholder
-$primary: #2d5f8a;
+// Accent color — warm slate blue (oklch(45% 0.10 240) hex fallback)
+$primary: #3a5f8a;
 @import "~bootstrap/scss/bootstrap.scss";

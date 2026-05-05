@@ -1,11 +1,6 @@
 import React from "react";
-// Styles
 import styled from "styled-components";
-// State
-import PropTypes from "prop-types";
-// Icons
 import { Icon } from "@iconify/react";
-// Components
 import { Link } from "react-scroll";
 
 // #region styled-components
@@ -14,49 +9,62 @@ const StyledDiv = styled.div`
   bottom: calc(var(--min-footer-height) + 1.5rem);
   right: 1.5rem;
   visibility: hidden;
+  opacity: 0;
   z-index: 2;
-
-  .link-icons {
-    color: ${({ theme }) => (theme.name === "light" ? "#45413C" : "#F5F2E8")};
-  }
+  transition: opacity 200ms ease, visibility 200ms ease;
 
   &.show-up {
     visibility: visible;
+    opacity: 1;
+  }
+
+  .back-to-top-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    box-shadow: var(--shadow-sm);
+    transition: color 100ms ease, box-shadow 100ms ease;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-accent);
+      box-shadow: var(--shadow-hover);
+    }
   }
 `;
 // #endregion
 
 // #region component
-const propTypes = { home: PropTypes.string };
-
 const BackToTop = ({ home = "Home" }) => {
-  const [scrollYNum, setScrollYNum] = React.useState(null);
-  const up = React.useRef(null);
+  const ref = React.useRef(null);
 
   React.useEffect(() => {
-    const updateScrollY = () => {
-      setScrollYNum(window.scrollY);
-      if (scrollYNum > 500) {
-        up.current.classList.add("show-up");
+    const handler = () => {
+      if (!ref.current) return;
+      if (window.scrollY > 500) {
+        ref.current.classList.add("show-up");
       } else {
-        up.current.classList.remove("show-up");
+        ref.current.classList.remove("show-up");
       }
     };
-    window.addEventListener("scroll", updateScrollY);
-
-    return () => window.removeEventListener("scroll", updateScrollY);
-  }, [scrollYNum]);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
-    <StyledDiv ref={up}>
-      <Link to={home} className="link-icons">
-        <Icon icon="fa6-solid:circle-chevron-up" />
+    <StyledDiv ref={ref}>
+      <Link to={home} smooth={true} duration={400} className="back-to-top-link" aria-label="Back to top">
+        <Icon icon="fa6-solid:chevron-up" width="14" />
       </Link>
     </StyledDiv>
   );
 };
-
-BackToTop.propTypes = propTypes;
 // #endregion
 
 export default BackToTop;

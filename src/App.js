@@ -5,17 +5,16 @@ import { selectMode, setMode } from "./app/appSlice";
 import { useGetUsersQuery } from "./app/apiSlice";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
 import { ErrorBoundary } from "react-error-boundary";
 import AppFallback from "./components/AppFallback";
 import GlobalStyles from "./components/GlobalStyles";
 import ScrollToTop from "./components/ScrollToTop";
 import Loading from "./components/Loading";
-import { Element } from "react-scroll";
 import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import { footerTheme, navLogo } from "./config";
 import { getStoredTheme, getPreferredTheme, setTheme } from "./utils";
 
 // #region component
@@ -42,7 +41,6 @@ const App = () => {
     setThemes();
   }, [setThemes]);
 
-  // Fix: moved out of component body to prevent listener leak on every render
   React.useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handler = () => {
@@ -61,29 +59,26 @@ const App = () => {
         <Loading />
       </Container>
     );
-  } else if (isSuccess) {
+  } else if (isSuccess || isError) {
+    // Render the site even on API error — name/avatar fall back to config values
     content = (
       <>
-        <Element name={"Home"} id="home">
-          <NavBar Logo={navLogo} callBack={(theme) => setThemes(theme)} />
-        </Element>
+        <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path="/publications" element={<Publications />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer mode={footerTheme} />
+        <Footer />
       </>
     );
-  } else if (isError) {
-    content = (
-      <Container className="d-flex vh-100 align-items-center justify-content-center">
-        <h2>
-          {error.status !== "FETCH_ERROR"
-            ? `${error.status}: ${error.data.message} - check githubUsername in src/config.js`
-            : `${error.status} - check URLs in src/app/apiSlice.js`}
-        </h2>
-      </Container>
-    );
+
+    if (isError) {
+      console.warn(
+        "GitHub API error — falling back to config values:",
+        error?.status
+      );
+    }
   }
 
   return (
