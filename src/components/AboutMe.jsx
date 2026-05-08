@@ -40,7 +40,7 @@ const StyledAbout = styled.section`
 const AboutMe = () => {
   return (
     <Element name="About" id="about">
-      <StyledAbout>
+      <StyledAbout aria-label="About">
         <div className="about-inner">
           <p className="kicker about-kicker">About</p>
 

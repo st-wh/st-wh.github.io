@@ -110,10 +110,10 @@ const courseGroups = [
 const Teaching = () => {
   return (
     <Element name="Teaching" id="teaching">
-      <StyledSection>
+      <StyledSection aria-labelledby="heading-teaching">
         <div className="section-inner">
           <p className="kicker section-kicker">Pedagogy</p>
-          <h2 className="section-heading">Teaching and Mentorship</h2>
+          <h2 id="heading-teaching" className="section-heading">Teaching and Mentorship</h2>
 
           <div className="teaching-body">
             <p>

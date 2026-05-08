@@ -78,10 +78,10 @@ const StyledSection = styled.section`
 const ResearchAreas = () => {
   return (
     <Element name="Research" id="research">
-      <StyledSection>
+      <StyledSection aria-labelledby="heading-research-areas">
         <div className="section-inner">
           <p className="kicker section-kicker">Scholarship</p>
-          <h2 className="section-heading">Research Areas</h2>
+          <h2 id="heading-research-areas" className="section-heading">Research Areas</h2>
 
           <ul className="areas-list" aria-label="Research areas">
             {researchAreas.map((area) => (

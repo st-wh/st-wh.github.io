@@ -127,10 +127,10 @@ const StyledSection = styled.section`
 const Books = () => {
   return (
     <Element name="Books" id="books">
-      <StyledSection>
+      <StyledSection aria-labelledby="heading-books">
         <div className="section-inner">
           <p className="kicker section-kicker">Authored Works</p>
-          <h2 className="section-heading">Books</h2>
+          <h2 id="heading-books" className="section-heading">Books</h2>
 
           <ul className="books-grid" aria-label="Books by Stanton Wortham">
             {books.map((book) => (

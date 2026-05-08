@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   /* Text */
   --color-text-primary:    oklch(22% 0.012 60);
   --color-text-secondary:  oklch(40% 0.010 60);
-  --color-text-muted:      oklch(58% 0.008 60);
+  --color-text-muted:      oklch(46% 0.009 60);
   --color-text-inverse:    oklch(98% 0.003 80);
 
   /* Accent — warm slate blue */

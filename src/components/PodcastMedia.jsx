@@ -118,10 +118,10 @@ const StyledSection = styled.section`
 const PodcastMedia = () => {
   return (
     <Element name="Media" id="media">
-      <StyledSection>
+      <StyledSection aria-labelledby="heading-podcast-film">
         <div className="section-inner">
           <p className="kicker section-kicker">Public Scholarship</p>
-          <h2 className="section-heading">Podcast and Film</h2>
+          <h2 id="heading-podcast-film" className="section-heading">Podcast and Film</h2>
 
           <ul className="media-list" aria-label="Podcast and film works">
             {/* Pulled Up Short */}

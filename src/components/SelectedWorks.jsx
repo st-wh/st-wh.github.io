@@ -134,10 +134,10 @@ const StyledSection = styled.section`
 const SelectedWorks = () => {
   return (
     <Element name="Publications" id="publications-anchor">
-      <StyledSection>
+      <StyledSection aria-labelledby="heading-selected-works">
         <div className="section-inner">
           <p className="kicker section-kicker">Selected Works</p>
-          <h2 className="section-heading">Landmark Publications</h2>
+          <h2 id="heading-selected-works" className="section-heading">Landmark Publications</h2>
           <p className="section-note">Ordered by citation impact. Citation counts from Google Scholar.</p>
 
           <ul className="works-list" aria-label="Selected publications">

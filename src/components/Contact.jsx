@@ -68,10 +68,10 @@ const StyledSection = styled.section`
 const Contact = () => {
   return (
     <Element name="Contact" id="contact">
-      <StyledSection>
+      <StyledSection aria-labelledby="heading-contact">
         <div className="section-inner">
           <p className="kicker section-kicker">Contact</p>
-          <h2 className="section-heading">Get in Touch</h2>
+          <h2 id="heading-contact" className="section-heading">Get in Touch</h2>
 
           <div className="contact-body">
             <p>
