@@ -23,10 +23,11 @@ const Home = () => {
         <Hero
           name={siteOwnerName}
           titleLines={siteOwnerTitle}
+          headshot={process.env.PUBLIC_URL + "/images/profileImage.jpeg"}
         />
       </Element>
       <main>
-        <AboutMe headshot={process.env.PUBLIC_URL + "/images/profileImage.jpeg"} />
+        <AboutMe />
         <SelectedWorks />
         <ResearchAreas />
         <Books />

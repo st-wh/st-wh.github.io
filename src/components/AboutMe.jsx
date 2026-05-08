@@ -18,12 +18,6 @@ const StyledAbout = styled.section`
     margin-bottom: var(--space-7);
   }
 
-  .about-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-
   .about-prose {
     max-width: var(--prose-max);
   }
@@ -39,49 +33,18 @@ const StyledAbout = styled.section`
   .about-prose p:last-child {
     margin-bottom: 0;
   }
-
-  .about-photo-slot {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .about-photo {
-    width: 220px;
-    height: 220px;
-    border-radius: var(--radius-md);
-    object-fit: cover;
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .about-photo-placeholder {
-    width: 220px;
-    height: 220px;
-    border-radius: var(--radius-md);
-    background-color: var(--color-surface-raised);
-    border: 1px dashed var(--color-border);
-  }
-
-  @media (min-width: 768px) {
-    .about-layout {
-      grid-template-columns: 1fr 240px;
-      align-items: start;
-    }
-  }
 `;
 // #endregion
 
 // #region component
-const AboutMe = ({ headshot }) => {
+const AboutMe = () => {
   return (
     <Element name="About" id="about">
       <StyledAbout>
         <div className="about-inner">
           <p className="kicker about-kicker">About</p>
 
-          <div className="about-layout">
-            <div className="about-prose">
+          <div className="about-prose">
               {/*
                 DRAFT COPY — Three paragraphs below are provisional.
                 Pending approval from Dr. Wortham before final publication.
@@ -146,21 +109,6 @@ const AboutMe = ({ headshot }) => {
                 .
               </p>
             </div>
-
-            <div className="about-photo-slot">
-              {headshot ? (
-                <img
-                  src={headshot}
-                  alt="Dr. Stanton Wortham"
-                  className="about-photo"
-                  loading="lazy"
-                />
-              ) : (
-                /* Headshot slot — drop headshot.jpg in public/images/ then update Home.jsx */
-                <div className="about-photo-placeholder" aria-hidden="true" />
-              )}
-            </div>
-          </div>
         </div>
       </StyledAbout>
     </Element>

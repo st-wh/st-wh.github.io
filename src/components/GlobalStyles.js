@@ -130,7 +130,7 @@ h4 {
 /* Kicker labels */
 .kicker {
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: 1.33;
   letter-spacing: 0.06em;

@@ -86,6 +86,23 @@ const StyledSection = styled.section`
     margin: 0;
   }
 
+  .section-note {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: calc(-1 * var(--space-5)) 0 var(--space-7) 0;
+  }
+
+  .work-citations {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    letter-spacing: 0.02em;
+  }
+
   .works-footer {
     margin-top: var(--space-7);
     font-family: var(--font-sans);
@@ -121,6 +138,7 @@ const SelectedWorks = () => {
         <div className="section-inner">
           <p className="kicker section-kicker">Selected Works</p>
           <h2 className="section-heading">Landmark Publications</h2>
+          <p className="section-note">Ordered by citation impact. Citation counts from Google Scholar.</p>
 
           <ul className="works-list" aria-label="Selected publications">
             {selectedWorks.map((work) => {
@@ -141,6 +159,12 @@ const SelectedWorks = () => {
                     <p className="work-meta">
                       {venue}
                       {work.coauthors && ` · ${work.coauthors}`}
+                      {work.citations && (
+                        <span className="work-citations">
+                          {" · "}
+                          <span>{work.citations.toLocaleString()} citations</span>
+                        </span>
+                      )}
                     </p>
                   </div>
                 </li>
