@@ -16,6 +16,7 @@ const App = () => {
     <ErrorBoundary FallbackComponent={AppFallback}>
       <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <GlobalStyles />
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <ScrollToTop />
         <NavBar />
         <Routes>

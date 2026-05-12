@@ -175,10 +175,25 @@ a:hover {
   margin: var(--space-5) 0;
 }
 
-/* Bootstrap override: page-item */
-.page-item.active .page-link {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+/* Skip-to-main-content link — visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 200;
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0ms;
+
+  &:focus {
+    top: var(--space-4);
+  }
 }
 `;
 

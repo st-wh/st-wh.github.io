@@ -54,6 +54,7 @@ const StyledNav = styled.nav`
     }
   }
 
+  /* Desktop link list */
   .nav-links {
     display: flex;
     align-items: center;
@@ -102,17 +103,90 @@ const StyledNav = styled.nav`
     }
   }
 
-  .spacer {
-    height: var(--nav-height);
+  /* Hamburger button — mobile only */
+  .nav-hamburger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    padding: 0;
+
+    &:hover {
+      color: var(--color-text-primary);
+    }
   }
 
-  /* Mobile: hide scroll links and BC external link to prevent overflow */
-  @media (max-width: 640px) {
-    .nav-scroll-links {
-      display: none;
+  /* Mobile drawer */
+  .nav-drawer {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background-color: rgba(250, 249, 247, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border-whisper);
+    padding: var(--space-4) var(--space-5) var(--space-5);
+    z-index: 99;
+    list-style: none;
+    margin: 0;
+
+    &.open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
     }
+
+    .drawer-link {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: var(--space-2) 0;
+      text-align: left;
+      width: 100%;
+      transition: color 100ms ease;
+
+      &:hover,
+      &.active {
+        color: var(--color-accent);
+      }
+    }
+
+    .drawer-link-external {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      padding: var(--space-2) 0;
+      display: block;
+      transition: color 100ms ease;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .nav-scroll-links,
     .nav-hide-mobile {
       display: none;
+    }
+
+    .nav-hamburger {
+      display: flex;
     }
   }
 `;
@@ -122,6 +196,7 @@ const StyledNav = styled.nav`
 const NavBar = () => {
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = React.useState(false);
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
   const isHome = pathname === "/";
 
   React.useEffect(() => {
@@ -129,6 +204,13 @@ const NavBar = () => {
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  // Close drawer on route change
+  React.useEffect(() => {
+    setDrawerOpen(false);
+  }, [pathname]);
+
+  const closeDrawer = () => setDrawerOpen(false);
 
   return (
     <>
@@ -139,8 +221,8 @@ const NavBar = () => {
             {siteOwnerName}
           </RouterLink>
 
+          {/* Desktop link list */}
           <ul className="nav-links">
-            {/* Scroll links on home; router links to home on other pages */}
             {scrollLinks.map((link) => (
               <li key={link.id} className="nav-scroll-links">
                 {isHome ? (
@@ -164,7 +246,6 @@ const NavBar = () => {
               </li>
             ))}
 
-            {/* Publications — always a router link */}
             <li>
               <RouterLink
                 to="/publications"
@@ -174,21 +255,14 @@ const NavBar = () => {
               </RouterLink>
             </li>
 
-            {/* CV — only rendered when cvUrl is set in config.js */}
             {cvUrl && (
               <li>
-                <a
-                  href={cvUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nav-link"
-                >
+                <a href={cvUrl} target="_blank" rel="noopener noreferrer" className="nav-link">
                   CV
                 </a>
               </li>
             )}
 
-            {/* Boston College external link — hidden on mobile to prevent overflow */}
             <li className="nav-hide-mobile">
               <a
                 href={bcProfileUrl}
@@ -200,7 +274,92 @@ const NavBar = () => {
               </a>
             </li>
           </ul>
+
+          {/* Mobile hamburger */}
+          <button
+            className="nav-hamburger"
+            aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={drawerOpen}
+            aria-controls="mobile-nav-drawer"
+            onClick={() => setDrawerOpen((o) => !o)}
+          >
+            {drawerOpen ? (
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <line x1="2" y1="2" x2="16" y2="16" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                <line x1="16" y1="2" x2="2" y2="16" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+                <line x1="0" y1="1" x2="18" y2="1" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                <line x1="0" y1="7" x2="18" y2="7" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                <line x1="0" y1="13" x2="18" y2="13" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* Mobile drawer */}
+        <ul
+          id="mobile-nav-drawer"
+          className={`nav-drawer${drawerOpen ? " open" : ""}`}
+          aria-hidden={!drawerOpen}
+        >
+          {scrollLinks.map((link) => (
+            <li key={`drawer-${link.id}`}>
+              {isHome ? (
+                <ScrollLink
+                  to={link.to}
+                  smooth={true}
+                  offset={-64}
+                  duration={400}
+                  className="drawer-link"
+                  onClick={closeDrawer}
+                  tabIndex={drawerOpen ? 0 : -1}
+                >
+                  {link.name}
+                </ScrollLink>
+              ) : (
+                <RouterLink to="/" className="drawer-link" onClick={closeDrawer} tabIndex={drawerOpen ? 0 : -1}>
+                  {link.name}
+                </RouterLink>
+              )}
+            </li>
+          ))}
+          <li>
+            <RouterLink
+              to="/publications"
+              className={`drawer-link${pathname === "/publications" ? " active" : ""}`}
+              onClick={closeDrawer}
+              tabIndex={drawerOpen ? 0 : -1}
+            >
+              Publications
+            </RouterLink>
+          </li>
+          {cvUrl && (
+            <li>
+              <a
+                href={cvUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="drawer-link"
+                tabIndex={drawerOpen ? 0 : -1}
+              >
+                CV
+              </a>
+            </li>
+          )}
+          <li>
+            <a
+              href={bcProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="drawer-link-external"
+              tabIndex={drawerOpen ? 0 : -1}
+            >
+              Boston College ↗
+            </a>
+          </li>
+        </ul>
       </StyledNav>
     </>
   );

@@ -26,19 +26,19 @@ const StyledHero = styled.header`
   .hero-photo {
     width: 120px;
     height: 120px;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     object-fit: cover;
     object-position: center top;
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
   }
 
   .hero-name {
     font-family: var(--font-serif);
-    font-size: clamp(2.25rem, 5vw, 3rem);
-    font-weight: 300;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.00;
+    letter-spacing: -0.035em;
     color: var(--color-text-primary);
     margin: 0 0 var(--space-3) 0;
   }
@@ -144,12 +144,14 @@ const Hero = ({ name, titleLines = [], headshot }) => {
             </p>
           )}
 
-          {/* Draft A hero statement — provisional copy, pending stakeholder approval */}
           <p className="hero-subcopy">
-            I study how language shapes who we become — in classrooms, in families, and
-            across the arc of a life. My work brings together discourse analysis, the
-            education of immigrant communities, and the question at the center of everything:
-            what does it mean to form a whole person?
+            I am the Charles F. Donovan, S.J., Dean of the Lynch School of Education at
+            Boston College. As a linguistic anthropologist and educational ethnographer, I
+            apply techniques from linguistic anthropology to study interaction, learning,
+            leadership development, and talent management in classrooms and organizations.
+            As a scholar, teacher, and documentary producer, I champion a vision of
+            "formative education" — fostering the development of whole human beings across
+            their intellectual, interpersonal, emotional, ethical, and spiritual dimensions.
           </p>
 
           <Link

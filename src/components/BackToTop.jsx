@@ -59,7 +59,7 @@ const BackToTop = ({ home = "Home" }) => {
 
   return (
     <StyledDiv ref={ref}>
-      <Link to={home} smooth={true} duration={400} className="back-to-top-link" aria-label="Back to top">
+      <Link to={home} smooth={true} duration={400} className="back-to-top-link" role="button" aria-label="Back to top">
         <Icon icon="fa6-solid:chevron-up" width="14" />
       </Link>
     </StyledDiv>

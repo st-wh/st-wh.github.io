@@ -200,7 +200,7 @@ const Publications = () => {
   };
 
   return (
-    <StyledPage>
+    <StyledPage id="main-content">
       <div className="page-inner">
         <p className="kicker page-kicker">Archive</p>
         <h1 className="page-heading">Publications</h1>
