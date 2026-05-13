@@ -24,8 +24,8 @@ const StyledHero = styled.header`
   }
 
   .hero-photo {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: var(--radius-lg);
     object-fit: cover;
     object-position: center top;
@@ -82,7 +82,7 @@ const StyledHero = styled.header`
 
   @media (min-width: 640px) {
     .hero-inner {
-      grid-template-columns: 1fr 240px;
+      grid-template-columns: 1fr 300px;
       gap: 0 var(--space-8);
       align-items: start;
     }
