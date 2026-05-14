@@ -9,16 +9,6 @@
 
 export const books = [
   {
-    id: "bk1",
-    year: 2020,
-    title: "Migration narratives: Diverging stories in schools, churches, and civic institutions",
-    publisher: "Bloomsbury",
-    coauthors: "Stanton Wortham, Briana Nichols, Katherine Clonan-Roy & Catherine Rhodes",
-    coverUrl: "/images/books/migration_narrative.jpg",
-    publisherUrl: "https://books.google.com/books/about/Migration_Narratives.html?id=VFn5DwAAQBAJ",
-    pdfUrl: null,
-  },
-  {
     id: "bk2",
     year: 2021,
     title: "Discourse analysis beyond the speech event (2nd ed.)",
@@ -29,16 +19,6 @@ export const books = [
     pdfUrl: "https://library.oapen.org/bitstream/handle/20.500.12657/105932/1/9781000245196.pdf",
   },
   {
-    id: "bk3",
-    year: 2009,
-    title: "Bullish on uncertainty: How organizational cultures transform participants",
-    publisher: "Cambridge University Press",
-    coauthors: "Alexandra Michel & Stanton Wortham",
-    coverUrl: "/images/books/bullish.jpg",
-    publisherUrl: null,
-    pdfUrl: null,
-  },
-  {
     id: "bk4",
     year: 2006,
     title: "Learning identity: The joint emergence of social identification and academic learning",
@@ -46,6 +26,26 @@ export const books = [
     coauthors: null,
     coverUrl: "/images/books/learning.jpg",
     publisherUrl: "https://www.cambridge.org/core/books/learning-identity/98B12AB9C943FBE397D4950270A1E4D8",
+    pdfUrl: null,
+  },
+  {
+    id: "bk1",
+    year: 2020,
+    title: "Migration narratives: Diverging stories in schools, churches, and civic institutions",
+    publisher: "Bloomsbury",
+    coauthors: "Stanton Wortham, Briana Nichols, Katherine Clonan-Roy & Catherine Rhodes",
+    coverUrl: "/images/books/migration_narrative.jpg",
+    publisherUrl: "https://books.google.com/books/about/Migration_Narratives.html?id=VFn5DwAAQBAJ",
+    pdfUrl: null,
+  },
+  {
+    id: "bk3",
+    year: 2009,
+    title: "Bullish on uncertainty: How organizational cultures transform participants",
+    publisher: "Cambridge University Press",
+    coauthors: "Alexandra Michel & Stanton Wortham",
+    coverUrl: "/images/books/bullish.jpg",
+    publisherUrl: null,
     pdfUrl: null,
   },
   {
