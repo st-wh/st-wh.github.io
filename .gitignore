@@ -32,3 +32,4 @@ local_files
 # Claude Code local directories
 .agents/
 .claude/
+.context/

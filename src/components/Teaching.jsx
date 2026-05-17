@@ -79,10 +79,6 @@ const StyledSection = styled.section`
 // Course data — verified from VITA 23.docx
 const courseGroups = [
   {
-    institution: "Boston College",
-    courses: ["Formative Education and Whole-Person Development"],
-  },
-  {
     institution: "University of Pennsylvania",
     courses: [
       "Approaches to Learning and Conceptions of Human Nature",
@@ -114,20 +110,6 @@ const Teaching = () => {
         <div className="section-inner">
           <p className="kicker section-kicker">Pedagogy</p>
           <h2 id="heading-teaching" className="section-heading">Teaching and Mentorship</h2>
-
-          <div className="teaching-body">
-            <p>
-              My approach to teaching is rooted in the same questions that animate my
-              research: how do people come to understand themselves through the act of
-              learning? I have taught courses in discourse analysis, qualitative methods,
-              educational foundations, and the anthropology of education at every level,
-              from undergraduate seminars to doctoral proseminars.
-            </p>
-            <p>
-              I believe that good teaching, like good scholarship, requires sitting with
-              uncertainty long enough to learn something from it.
-            </p>
-          </div>
 
           <div>
             {courseGroups.map((group) => (

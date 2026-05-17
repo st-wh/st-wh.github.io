@@ -36,7 +36,7 @@ export const books = [
     coauthors: "Stanton Wortham, Briana Nichols, Katherine Clonan-Roy & Catherine Rhodes",
     coverUrl: "/images/books/migration_narrative.jpg",
     publisherUrl: "https://books.google.com/books/about/Migration_Narratives.html?id=VFn5DwAAQBAJ",
-    pdfUrl: null,
+    pdfUrl: "/books/migration.pdf",
   },
   {
     id: "bk3",
@@ -66,6 +66,6 @@ export const books = [
     coauthors: null,
     coverUrl: "/images/books/acting.jpg",
     publisherUrl: null,
-    pdfUrl: "https://files.eric.ed.gov/fulltext/ED384052.pdf",
+    pdfUrl: null,
   },
 ];

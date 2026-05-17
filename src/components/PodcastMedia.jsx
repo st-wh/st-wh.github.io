@@ -177,12 +177,12 @@ const PodcastMedia = () => {
               </p>
               <div className="media-links">
                 <a
-                  href="http://www.adelantethefilm.com/"
+                  href="https://www.youtube.com/watch?v=SkclQtC45v8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="media-link"
                 >
-                  adelantethefilm.com ↗
+                  Watch on YouTube ↗
                 </a>
               </div>
             </li>
