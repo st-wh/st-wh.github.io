@@ -1,5 +1,5 @@
 // Selected Works — 7 landmark publications chosen by Dr. Wortham as priority showcase.
-// Ordered per stakeholder direction. Annotations marked [DRAFT] pending approval.
+// Ordered per stakeholder direction. Annotations are placeholder copy pending polish.
 // Source: Wortham Short CV Feb 2026. No facts invented.
 
 export const selectedWorks = [
@@ -9,7 +9,7 @@ export const selectedWorks = [
     title: "Discourse analysis beyond the speech event (2nd ed.)",
     publisher: "Routledge",
     annotation:
-      "[DRAFT] A method for analyzing how meaning accumulates across interactions over time, not just within a single exchange.",
+      "A method for analyzing how meaning accumulates across interactions over time, not just within a single exchange.",
     coauthors: "with Angela Reyes",
     citations: null,
     externalUrl: null,
@@ -20,7 +20,7 @@ export const selectedWorks = [
     title: "Learning identity: The joint emergence of social identification and academic learning",
     publisher: "Cambridge University Press",
     annotation:
-      "[DRAFT] This book traces how a student's academic identity and social position form together across a school year — not as separate processes, but as one.",
+      "This book traces how a student's academic identity and social position form together across a school year — not as separate processes, but as one.",
     coauthors: null,
     citations: null,
     externalUrl: null,
@@ -31,7 +31,7 @@ export const selectedWorks = [
     title: "Migration narratives: Diverging stories in schools, churches, and civic institutions",
     publisher: "Bloomsbury",
     annotation:
-      "[DRAFT] How the same migration story gets told differently — and made differently real — across the institutions a community depends on.",
+      "How the same migration story gets told differently — and made differently real — across the institutions a community depends on.",
     coauthors: "with Briana Nichols, Katherine Clonan-Roy & Catherine Rhodes",
     citations: null,
     externalUrl: null,
@@ -42,7 +42,7 @@ export const selectedWorks = [
     title: "Bullish on uncertainty: How organizational cultures transform participants",
     publisher: "Cambridge University Press",
     annotation:
-      "[DRAFT] An ethnographic study of how investment banks transform new recruits into professional traders — and what that reveals about identity, learning, and organizational culture.",
+      "An ethnographic study of how investment banks transform new recruits into professional traders — and what that reveals about identity, learning, and organizational culture.",
     coauthors: "with Alexandra Michel",
     citations: null,
     externalUrl: null,
@@ -55,7 +55,7 @@ export const selectedWorks = [
     volume: "32",
     pages: "164–187",
     annotation:
-      "[DRAFT] A close study of how one student's identity shifted from model pupil to social outcast through the accumulated weight of classroom talk over a single school year.",
+      "A close study of how one student's identity shifted from model pupil to social outcast through the accumulated weight of classroom talk over a single school year.",
     coauthors: null,
     citations: 398,
     externalUrl: null,
@@ -68,7 +68,7 @@ export const selectedWorks = [
     volume: "3(3)",
     pages: null,
     annotation:
-      "[DRAFT] A special issue exploring what education looks like when its aim is not merely academic performance or measurable well-being, but the formation of whole persons.",
+      "A special issue exploring what education looks like when its aim is not merely academic performance or measurable well-being, but the formation of whole persons.",
     coauthors: "Guest Editors: with Dennis Shirley & Deoksoon Kim",
     citations: null,
     externalUrl: null,
@@ -81,7 +81,7 @@ export const selectedWorks = [
     volume: "3",
     pages: "406–436",
     annotation:
-      "[DRAFT] An empirical and conceptual account of what comprehensive well-being means in educational practice, and how institutions can orient themselves toward it.",
+      "An empirical and conceptual account of what comprehensive well-being means in educational practice, and how institutions can orient themselves toward it.",
     coauthors: "with Renata Love Jones, William Peters, Stacy Morris & Juan Cristóbal García-Huidobro",
     citations: null,
     externalUrl: null,

@@ -138,7 +138,7 @@ const SelectedWorks = () => {
         <div className="section-inner">
           <p className="kicker section-kicker">Selected Works</p>
           <h2 id="heading-selected-works" className="section-heading">Landmark Publications</h2>
-          <p className="section-note">Ordered by citation impact. Citation counts from Google Scholar.</p>
+          <p className="section-note">A curated selection — anchor books, a foundational article, and a recent thematic special issue. The full archive lives at the link below.</p>
 
           <ul className="works-list" aria-label="Selected publications">
             {selectedWorks.map((work) => {

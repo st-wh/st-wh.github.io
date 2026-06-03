@@ -210,17 +210,17 @@ const Publications = () => {
                   rel="noopener noreferrer"
                   className="pub-link"
                 >
-                  doi:{pub.doi}
+                  Link
                 </a>
               )}
-              {pub.externalUrl && !pub.pdfUrl && !pub.doi && (
+              {pub.externalUrl && !pub.doi && (
                 <a
                   href={pub.externalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pub-link"
                 >
-                  Publisher ↗
+                  Link
                 </a>
               )}
             </div>
@@ -236,7 +236,8 @@ const Publications = () => {
         <p className="kicker page-kicker">Archive</p>
         <h1 className="page-heading">Publications</h1>
         <p className="page-note">
-          Books and selected articles & chapters. For a complete list, visit{" "}
+          Authored books and a curated archive of articles and chapters. For the
+          complete record including citations, visit{" "}
           <a
             href="https://scholar.google.com/citations?user=sf4XfXUAAAAJ&hl=en"
             target="_blank"
@@ -253,17 +254,16 @@ const Publications = () => {
           {books.map(renderEntry)}
         </ul>
 
-        {/* Articles */}
-        <p className="section-label">Journal Articles (Selected)</p>
-        <ul className="pub-list" aria-label="Journal articles">
+        {/* Articles & chapters */}
+        <p className="section-label">Articles & Chapters</p>
+        <ul className="pub-list" aria-label="Articles and chapters">
           {articles.map(renderEntry)}
         </ul>
 
         <div className="archive-note">
           <p>
-            This archive is partial at launch. For the complete publication record
-            including book chapters, edited volumes, encyclopedia entries, and all
-            journal articles, please visit{" "}
+            For citation counts, recent updates, and the complete publication
+            record, see{" "}
             <a
               href="https://scholar.google.com/citations?user=sf4XfXUAAAAJ&hl=en"
               target="_blank"
@@ -271,7 +271,7 @@ const Publications = () => {
             >
               Google Scholar
             </a>{" "}
-            or{" "}
+            or the{" "}
             <a
               href="https://www.bc.edu/bc-web/schools/lynch-school/faculty-research/faculty-directory/stanton-wortham.html"
               target="_blank"

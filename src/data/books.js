@@ -34,7 +34,7 @@ export const books = [
     publisher: "Cambridge University Press",
     coauthors: "Alexandra Michel & Stanton Wortham",
     coverUrl: "/images/books/bullish.jpg",
-    publisherUrl: null,
+    publisherUrl: "https://books.google.com/books/about/Bullish_on_Uncertainty.html?id=egttPq1E3ZAC",
     pdfUrl: "/articles/bullish-on-uncertainty-front-matter.pdf",
     pdfPreview: true,
   },
@@ -56,7 +56,7 @@ export const books = [
     publisher: "Teachers College Press",
     coauthors: null,
     coverUrl: "/images/books/narratives.jpg",
-    publisherUrl: null,
+    publisherUrl: "https://archive.org/details/narrativesinacti0000wort",
     pdfUrl: null,
   },
   {
@@ -66,7 +66,7 @@ export const books = [
     publisher: "John Benjamins",
     coauthors: null,
     coverUrl: "/images/books/acting.jpg",
-    publisherUrl: null,
+    publisherUrl: "https://benjamins.com/catalog/pbns.30",
     pdfUrl: null,
   },
 ];

@@ -172,7 +172,7 @@ const Books = () => {
                       rel="noopener noreferrer"
                       className="book-link"
                     >
-                      Publisher ↗
+                      Link
                     </a>
                   )}
                   {book.pdfUrl && (
@@ -182,7 +182,7 @@ const Books = () => {
                       rel="noopener noreferrer"
                       className="book-link"
                     >
-                      {book.pdfPreview ? "Preview PDF ↗" : "Open Access PDF ↗"}
+                      {book.pdfPreview ? "Preview" : "PDF"}
                     </a>
                   )}
                 </div>

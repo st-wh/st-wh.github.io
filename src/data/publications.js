@@ -31,7 +31,7 @@ export const publications = [
       "Stanton Wortham, Briana Nichols, Katherine Clonan-Roy & Catherine Rhodes",
     doi: null,
     pdfUrl: "/books/migration.pdf",
-    externalUrl: null,
+    externalUrl: "https://books.google.com/books/about/Migration_Narratives.html?id=VFn5DwAAQBAJ",
   },
   {
     id: "b3",
@@ -42,7 +42,7 @@ export const publications = [
     coauthors: "Alexandra Michel & Stanton Wortham",
     doi: null,
     pdfUrl: null,
-    externalUrl: null,
+    externalUrl: "https://books.google.com/books/about/Bullish_on_Uncertainty.html?id=egttPq1E3ZAC",
   },
   {
     id: "b4",
@@ -54,7 +54,7 @@ export const publications = [
     coauthors: null,
     doi: null,
     pdfUrl: null,
-    externalUrl: null,
+    externalUrl: "https://www.cambridge.org/core/books/learning-identity/98B12AB9C943FBE397D4950270A1E4D8",
   },
   {
     id: "b5",
@@ -65,7 +65,7 @@ export const publications = [
     coauthors: null,
     doi: null,
     pdfUrl: null,
-    externalUrl: null,
+    externalUrl: "https://archive.org/details/narrativesinacti0000wort",
   },
   {
     id: "b6",
@@ -76,7 +76,7 @@ export const publications = [
     coauthors: null,
     doi: null,
     pdfUrl: null,
-    externalUrl: null,
+    externalUrl: "https://benjamins.com/catalog/pbns.30",
   },
 
   // === Articles & chapters (year descending) ===
