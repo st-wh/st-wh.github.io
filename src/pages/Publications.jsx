@@ -103,7 +103,14 @@ const StyledPage = styled.main`
     margin: 0;
   }
 
-  .pub-doi {
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-1);
+  }
+
+  .pub-link {
     font-family: var(--font-sans);
     font-size: 0.8125rem;
     font-weight: 400;
@@ -113,7 +120,7 @@ const StyledPage = styled.main`
     transition: color 100ms ease;
   }
 
-  .pub-doi:hover {
+  .pub-link:hover {
     color: var(--color-accent-hover);
   }
 
@@ -184,15 +191,39 @@ const Publications = () => {
           <p className="pub-title">{pub.title}</p>
           {venue && <p className="pub-meta">{venue}</p>}
           {pub.coauthors && <p className="pub-coauthors">{pub.coauthors}</p>}
-          {pub.doi && (
-            <a
-              href={`https://doi.org/${pub.doi}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pub-doi"
-            >
-              doi:{pub.doi}
-            </a>
+          {(pub.pdfUrl || pub.doi || pub.externalUrl) && (
+            <div className="pub-links">
+              {pub.pdfUrl && (
+                <a
+                  href={pub.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pub-link"
+                >
+                  PDF
+                </a>
+              )}
+              {pub.doi && (
+                <a
+                  href={`https://doi.org/${pub.doi}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pub-link"
+                >
+                  doi:{pub.doi}
+                </a>
+              )}
+              {pub.externalUrl && !pub.pdfUrl && !pub.doi && (
+                <a
+                  href={pub.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pub-link"
+                >
+                  Publisher ↗
+                </a>
+              )}
+            </div>
           )}
         </div>
       </li>
@@ -205,8 +236,7 @@ const Publications = () => {
         <p className="kicker page-kicker">Archive</p>
         <h1 className="page-heading">Publications</h1>
         <p className="page-note">
-          Partial archive — books and selected articles. Full archive (100+ entries)
-          is forthcoming. For a complete list, visit{" "}
+          Books and selected articles & chapters. For a complete list, visit{" "}
           <a
             href="https://scholar.google.com/citations?user=sf4XfXUAAAAJ&hl=en"
             target="_blank"

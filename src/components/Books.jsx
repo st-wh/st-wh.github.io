@@ -182,7 +182,7 @@ const Books = () => {
                       rel="noopener noreferrer"
                       className="book-link"
                     >
-                      Open Access PDF ↗
+                      {book.pdfPreview ? "Preview PDF ↗" : "Open Access PDF ↗"}
                     </a>
                   )}
                 </div>

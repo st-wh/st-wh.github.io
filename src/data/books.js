@@ -1,11 +1,10 @@
 // Books — all 6 authored books, from VITA 23.docx (verified).
+// Ordered by year descending.
 //
-// coverUrl: set to "/images/books/<filename>" once you drop the image into
-//           public/images/books/. See public/images/books/README.txt for
-//           expected filenames. The site degrades gracefully until covers exist.
-//
+// coverUrl:    "/images/books/<filename>" — site degrades gracefully when image is missing.
 // publisherUrl: link to the publisher's book page (Cambridge Core, Routledge, etc.)
-// pdfUrl:       link to a verified open-access PDF (OAPEN, ERIC, etc.)
+// pdfUrl:       link to a verified open-access PDF (OAPEN, ERIC, local /public/books/, etc.)
+// pdfPreview:   true when pdfUrl is publisher front-matter/preview rather than full text.
 
 export const books = [
   {
@@ -16,17 +15,7 @@ export const books = [
     coauthors: "Stanton Wortham & Angela Reyes",
     coverUrl: "/images/books/discourse_analysis.jpg",
     publisherUrl: null,
-    pdfUrl: "https://library.oapen.org/bitstream/handle/20.500.12657/105932/1/9781000245196.pdf",
-  },
-  {
-    id: "bk4",
-    year: 2006,
-    title: "Learning identity: The joint emergence of social identification and academic learning",
-    publisher: "Cambridge University Press",
-    coauthors: null,
-    coverUrl: "/images/books/learning.jpg",
-    publisherUrl: "https://www.cambridge.org/core/books/learning-identity/98B12AB9C943FBE397D4950270A1E4D8",
-    pdfUrl: null,
+    pdfUrl: "/books/discourse-analysis.pdf",
   },
   {
     id: "bk1",
@@ -46,7 +35,19 @@ export const books = [
     coauthors: "Alexandra Michel & Stanton Wortham",
     coverUrl: "/images/books/bullish.jpg",
     publisherUrl: null,
-    pdfUrl: null,
+    pdfUrl: "/articles/bullish-on-uncertainty-front-matter.pdf",
+    pdfPreview: true,
+  },
+  {
+    id: "bk4",
+    year: 2006,
+    title: "Learning identity: The joint emergence of social identification and academic learning",
+    publisher: "Cambridge University Press",
+    coauthors: null,
+    coverUrl: "/images/books/learning.jpg",
+    publisherUrl: "https://www.cambridge.org/core/books/learning-identity/98B12AB9C943FBE397D4950270A1E4D8",
+    pdfUrl: "/articles/learning-identity-front-matter.pdf",
+    pdfPreview: true,
   },
   {
     id: "bk5",
