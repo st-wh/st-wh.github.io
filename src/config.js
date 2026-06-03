@@ -6,7 +6,7 @@ export const siteOwnerName = "Stanton Wortham";
 
 // Canonical title — two lines rendered below h1 in the hero
 export const siteOwnerTitle = [
-  "Charles F. Donovan, S.J. Dean",
+  "Charles F. Donovan, S.J., Dean",
   "Lynch School of Education and Human Development, Boston College",
 ];
 

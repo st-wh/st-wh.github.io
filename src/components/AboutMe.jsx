@@ -15,7 +15,11 @@ const StyledAbout = styled.section`
   }
 
   .about-kicker {
-    margin-bottom: var(--space-7);
+    margin-bottom: var(--space-4);
+  }
+
+  .about-heading {
+    margin: 0 0 var(--space-7) 0;
   }
 
   .about-layout {
@@ -94,7 +98,8 @@ const AboutMe = () => {
     <Element name="About" id="about">
       <StyledAbout aria-labelledby="about-heading">
         <div className="about-inner">
-          <p className="kicker about-kicker" id="about-heading">About</p>
+          <p className="kicker about-kicker">About</p>
+          <h2 id="about-heading" className="about-heading">Biography</h2>
 
           <div className="about-layout">
             <div className="about-image-wrap">

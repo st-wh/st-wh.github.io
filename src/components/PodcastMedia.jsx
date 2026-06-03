@@ -129,10 +129,6 @@ const PodcastMedia = () => {
               <span className="media-type-tag">Podcast · Ongoing</span>
               <h3 className="media-title">Pulled Up Short</h3>
               <p className="media-description">
-                {/*
-                  DRAFT — Provisional description, pending stakeholder approval.
-                  [VERIFY: comfort with Gadamerian framing here]
-                */}
                 A podcast hosted through Boston College, in conversation with scholars,
                 educators, and thinkers willing to sit with a genuinely hard question long
                 enough to learn something from it. Each episode explores one contested
@@ -166,9 +162,6 @@ const PodcastMedia = () => {
                 A documentary following Mexican immigrants in Norristown, Pennsylvania, as
                 they revitalized St. Patrick's Church and, with it, a neighborhood. Aired on
                 more than thirty PBS affiliates and screened at over fifty college campuses.
-                {/*
-                  [VERIFY: confirm "executive producer" credit is correct in first-person voice]
-                */}
               </p>
               <p className="media-awards">
                 Silver Palm Award (Mexico International Film Festival, 2015) · Rising Star

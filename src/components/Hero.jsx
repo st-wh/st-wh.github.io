@@ -145,8 +145,8 @@ const Hero = ({ name, titleLines = [], headshot }) => {
           )}
 
           <p className="hero-subcopy">
-            I am the Charles F. Donovan, S.J., Dean of the Lynch School of Education at
-            Boston College. As a linguistic anthropologist and educational ethnographer, I
+            I am the Charles F. Donovan, S.J., Dean of the Lynch School of Education and
+            Human Development at Boston College. As a linguistic anthropologist and educational ethnographer, I
             apply techniques from linguistic anthropology to study interaction, learning,
             leadership development, and talent management in classrooms and organizations.
             As a scholar, teacher, and documentary producer, I champion a vision of
