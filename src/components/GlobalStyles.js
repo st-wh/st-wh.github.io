@@ -28,7 +28,9 @@ const GlobalStyles = createGlobalStyle`
   --color-focus:           oklch(45% 0.10 240);
 
   /* Footer */
-  --color-footer-bg:       oklch(20% 0.012 60);
+  --color-footer-bg:           oklch(20% 0.012 60);
+  --color-footer-text:         rgba(200, 195, 186, 0.7);
+  --color-footer-text-strong:  rgba(200, 195, 186, 1);
 
   /* Fonts */
   --font-serif: 'Source Serif 4', 'Iowan Old Style', 'Palatino Linotype', Georgia, ui-serif, serif;

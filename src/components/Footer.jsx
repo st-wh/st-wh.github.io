@@ -24,7 +24,7 @@ const StyledFooter = styled.footer`
     font-family: var(--font-sans);
     font-size: 0.8125rem;
     font-weight: 400;
-    color: rgba(200, 195, 186, 0.7);
+    color: var(--color-footer-text);
     margin: 0;
   }
 
@@ -41,12 +41,12 @@ const StyledFooter = styled.footer`
     font-family: var(--font-sans);
     font-size: 0.8125rem;
     font-weight: 400;
-    color: rgba(200, 195, 186, 0.7);
+    color: var(--color-footer-text);
     text-decoration: none;
     transition: color 100ms ease;
 
     &:hover {
-      color: rgba(200, 195, 186, 1);
+      color: var(--color-footer-text-strong);
     }
   }
 `;

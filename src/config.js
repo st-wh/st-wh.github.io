@@ -1,7 +1,4 @@
-// GitHub username — used for GitHub API (display name fallback)
-export const githubUsername = "st-wh";
-
-// Canonical display name — used as hero h1 if GitHub API name is unavailable
+// Canonical display name — rendered as the hero h1
 export const siteOwnerName = "Stanton Wortham";
 
 // Canonical title — two lines rendered below h1 in the hero
