@@ -239,7 +239,7 @@ const NavBar = () => {
                     {link.name}
                   </ScrollLink>
                 ) : (
-                  <RouterLink to="/" className="nav-link">
+                  <RouterLink to="/" state={{ scrollTo: link.to }} className="nav-link">
                     {link.name}
                   </RouterLink>
                 )}
@@ -319,7 +319,13 @@ const NavBar = () => {
                   {link.name}
                 </ScrollLink>
               ) : (
-                <RouterLink to="/" className="drawer-link" onClick={closeDrawer} tabIndex={drawerOpen ? 0 : -1}>
+                <RouterLink
+                  to="/"
+                  state={{ scrollTo: link.to }}
+                  className="drawer-link"
+                  onClick={closeDrawer}
+                  tabIndex={drawerOpen ? 0 : -1}
+                >
                   {link.name}
                 </RouterLink>
               )}
