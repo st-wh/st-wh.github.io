@@ -142,6 +142,7 @@ const Books = () => {
                       alt={`Cover of ${book.title}`}
                       className="book-cover"
                       loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
                         e.currentTarget.nextSibling.style.display = "block";

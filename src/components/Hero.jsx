@@ -126,6 +126,8 @@ const Hero = ({ name, titleLines = [], headshot }) => {
               src={headshot}
               alt="Dr. Stanton Wortham"
               className="hero-photo"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
         )}

@@ -107,6 +107,10 @@ const AboutMe = () => {
                 src={process.env.PUBLIC_URL + "/images/bio_image.jpeg"}
                 alt="Dr. Stanton Wortham"
                 className="about-image"
+                width="350"
+                height="418"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
