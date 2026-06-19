@@ -93,9 +93,8 @@ export const publications = [
     coauthors: "Katrina Borowiec, Stanton Wortham, Deoksoon Kim & Elizabeth Barsotti",
     doi: null,
     pdfUrl: null,
-    externalUrl: https://link.springer.com/article/10.1007/s10755-025-09802-3,
+    externalUrl: "https://link.springer.com/article/10.1007/s10755-025-09802-3",
   },
-
   // 2024
   {
     id: "a55",
