@@ -9,7 +9,7 @@ export const selectedWorks = [
     title: "Discourse analysis beyond the speech event (2nd ed.)",
     publisher: "Routledge",
     annotation:
-      "A method for analyzing how meaning accumulates across interactions over time, not just within a single exchange.",
+      "A method for analyzing discursive patterns across interactions over time, not just within a single exchange.",
     coauthors: "with Angela Reyes",
     citations: null,
     externalUrl: null,
@@ -17,7 +17,7 @@ export const selectedWorks = [
   {
     id: "sw1",
     year: 2006,
-    title: "Learning identity: The joint emergence of social identification and academic learning",
+    title: "Learning identity: The joint emergence of academic learning and social identity",
     publisher: "Cambridge University Press",
     annotation:
       "This book traces how a student's academic identity and social position form together across a school year — not as separate processes, but as one.",
@@ -31,7 +31,7 @@ export const selectedWorks = [
     title: "Migration narratives: Diverging stories in schools, churches, and civic institutions",
     publisher: "Bloomsbury",
     annotation:
-      "How the same migration story gets told differently — and made differently real — across the institutions a community depends on.",
+      "An ethnography of an entire community that absorbed many Mexican immigrants in a short period of time, analyzing how migrants engaged with and transformed various institutions.",
     coauthors: "with Briana Nichols, Katherine Clonan-Roy & Catherine Rhodes",
     citations: null,
     externalUrl: null,
@@ -42,7 +42,7 @@ export const selectedWorks = [
     title: "Bullish on uncertainty: How organizational cultures transform participants",
     publisher: "Cambridge University Press",
     annotation:
-      "An ethnographic study of how investment banks transform new recruits into professional traders — and what that reveals about identity, learning, and organizational culture.",
+      "An ethnographic study of how investment banks transform new recruits into professional bankers — and what that reveals about identity, learning, and organizational culture.",
     coauthors: "with Alexandra Michel",
     citations: null,
     externalUrl: null,

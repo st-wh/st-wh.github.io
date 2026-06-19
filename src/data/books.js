@@ -41,7 +41,7 @@ export const books = [
   {
     id: "bk4",
     year: 2006,
-    title: "Learning identity: The joint emergence of social identification and academic learning",
+    title: "Learning identity: The joint emergence of academic learning and social identity",
     publisher: "Cambridge University Press",
     coauthors: null,
     coverUrl: "/images/books/learning.jpg",

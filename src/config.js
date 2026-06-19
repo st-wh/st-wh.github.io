@@ -7,9 +7,9 @@ export const siteOwnerTitle = [
   "Lynch School of Education and Human Development, Boston College",
 ];
 
-// CV PDF — served from public/cv.pdf
+// CV PDF — served from public/vita_26.pdf
 // When null, the CV nav link is hidden entirely.
-export const cvUrl = "/cv.pdf";
+export const cvUrl = "/vita_26.pdf";
 
 // Boston College faculty profile — verified link
 export const bcProfileUrl =

@@ -49,7 +49,7 @@ export const publications = [
     type: "book",
     year: 2006,
     title:
-      "Learning identity: The joint emergence of social identification and academic learning",
+      "Learning identity: The joint emergence of academic learning and social identity",
     publisher: "Cambridge University Press",
     coauthors: null,
     doi: null,
@@ -81,7 +81,48 @@ export const publications = [
 
   // === Articles & chapters (year descending) ===
 
+  // 2026
+  {
+    id: "a54",
+    type: "article",
+    year: 2026,
+    title: "Faculty engagement patterns in online formative or whole person education: Characteristics of highly engaged faculty",
+    journal: "Innovative Higher Education (in press)",
+    volume: null,
+    pages: null,
+    coauthors: "Katrina Borowiec, Stanton Wortham, Deoksoon Kim & Elizabeth Barsotti",
+    doi: null,
+    pdfUrl: null,
+    externalUrl: null,
+  },
+
   // 2024
+  {
+    id: "a55",
+    type: "article",
+    year: 2024,
+    title: "Resonant education",
+    journal: "Educational Theory",
+    volume: "74",
+    pages: "963–967",
+    coauthors: null,
+    doi: "10.1111/edth.12683",
+    pdfUrl: null,
+    externalUrl: null,
+  },
+  {
+    id: "a56",
+    type: "article",
+    year: 2024,
+    title: "Can Korea have academic achievement plus well-being? The case of Hyukshin schools",
+    journal: "Journal of Educational Change",
+    volume: "25",
+    pages: "393–415",
+    coauthors: "Stanton Wortham, Clara Shim, Deoksoon Kim & Dennis Shirley",
+    doi: "10.1007/s10833-023-09497-3",
+    pdfUrl: null,
+    externalUrl: null,
+  },
   {
     id: "a16",
     type: "article",

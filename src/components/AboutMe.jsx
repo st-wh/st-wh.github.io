@@ -78,6 +78,17 @@ const StyledAbout = styled.section`
     margin-bottom: 0;
   }
 
+  .about-prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 100ms ease;
+  }
+
+  .about-prose a:hover {
+    color: var(--color-accent-hover);
+  }
+
   @media (min-width: 768px) {
     .about-layout {
       grid-template-columns: 200px 1fr;
@@ -135,14 +146,35 @@ const AboutMe = () => {
                   An interdisciplinary scholar, Dr. Wortham has authored or edited 11 books
                   and over 100 articles and chapters. His notable books include{" "}
                   <em>Learning Identity</em> (2006), <em>Bullish on Uncertainty</em> (2009),{" "}
-                  <em>Discourse Analysis beyond the Speech Event</em> (2015), and{" "}
-                  <em>Migration Narratives</em> (2020). Recently, his work has focused deeply
-                  on Mexican immigrant and Mexican American adolescents living in areas of the
-                  United States that have only recently become home to large numbers of
-                  Latinos. This decade-long ethnographic research explores the fluid
-                  identities of both newcomers and host communities, a project that has
-                  yielded traditional academic publications as well as the documentary film,{" "}
-                  <em>Adelante</em>.
+                  <a
+                    href="https://www.taylorfrancis.com/books/oa-mono/10.4324/9781003049708/discourse-analysis-beyond-speech-event-stanton-wortham-angela-reyes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <em>Discourse Analysis beyond the Speech Event</em>
+                  </a>{" "}
+                  (2021), and{" "}
+                  <a
+                    href="https://www.bc.edu/content/dam/bc1/schools/lsoe/Manuscripts/Migration%20Narratives%20published.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <em>Migration Narratives</em>
+                  </a>{" "}
+                  (2020). Recently, his work has focused on Mexican immigrant and Mexican
+                  American adolescents living in areas of the United States that have only
+                  recently become home to large numbers of Latinos. This decade-long
+                  ethnographic research explores the fluid identities of both newcomers and
+                  host communities, a project that has yielded traditional academic
+                  publications as well as the documentary film,{" "}
+                  <a
+                    href="https://www.youtube.com/watch?v=SkclQtC45v8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <em>Adelante</em>
+                  </a>
+                  .
                 </p>
               </div>
 
@@ -150,10 +182,10 @@ const AboutMe = () => {
                 <p className="about-subheading">Educational Philosophy</p>
                 <p>
                   At Boston College, Dr. Wortham and his colleagues are implementing a
-                  comprehensive model of "formative education." This philosophy asserts that
-                  educators bear the responsibility of nurturing the whole person, extending
-                  far beyond standardized academics to include the complex interrelations
-                  among emotional, ethical, and spiritual development.
+                  comprehensive model of "formative education." On this approach, education
+                  nurtures the whole person, extending beyond academic content and vocational
+                  skills to include emotional, relational, civic, ethical, and spiritual
+                  development.
                 </p>
               </div>
             </div>
